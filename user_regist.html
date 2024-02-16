@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0px auto;
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+        tr, td {
+            border : solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="">
+        <table>
+            <tr><th colspan="5" id="form">회원가입양식</th></tr>
+            <tr><td>구분</td><td class="data_ui" colspan="2">데이터입력</td><td>유효성검사</td><td>비고</td></tr>
+            <tr>
+                <td>아이디</td>
+                <td colspan="2">
+                    <input type="text" id="user_id" name="userId">
+                    <button id="btn_check_id">아이디확인</button>
+                </td>
+                <td>8자리 , 첫글자 영문소문자</td><td id="message"></td></tr>
+            <tr><td>비밀번호</td><td colspan="2"><input type="text" id="pwd1" name="pwd1"></td><td rowspan="2">비밀번호 일치</td><td><input type="hidden" id="flag" value="false"></td></tr>
+            <tr><td>비번확인</td><td colspan="2"><input type="text" id="user_id"></td><td></td></tr>
+            <tr>
+                <td>성별</td>
+                <td colspan="2">
+                    <input type="radio" name="gender">남
+                    <input type="radio" name="gender">여
+                </td><td>필수 선택</td><td></td></tr>
+            <tr>
+                <td>관심분야</td>
+                <td colspan="2">
+                    <input type="checkbox" name="interests" value="0">문학
+                    <input type="checkbox" name="interests" value="1">어학
+                    <input type="checkbox" name="interests" value="2">정보IT<br>
+                    <input type="checkbox" name="interests" value="3">과학
+                    <input type="checkbox" name="interests" value="4">수학
+                    <input type="checkbox" name="interests" value="5">예술
+                </td><td>2~3개 사이 선택</td><td></td>
+            </tr>
+            <tr><td>자기소개</td><td colspan="2"><textarea cols="50" rows="5"></textarea></td><td></td><td></td></tr>    
+            <tr><td colspan="5" id="sending"><input type="submit" value="가입"> <input type="reset"></td></tr>
+        </table>
+    </form>
+</body>
+</html>
