@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <SCRipt>
+        $(document).ready(function(){
+        	 let imgs = [6,11,8,1,12,5];
+        	 
+        	const setImage = (i) => {
+        		return new Promise(function(resolve, reject) { 
+        			setTimeout(() => {
+        				resolve(i);
+        				if(i>5){
+        					$('#'+(i%6)).attr('src',"./images/0.png");
+        				} else {
+        					$('#'+i).attr('src',"./images/"+imgs[i]+".png");
+        				}
+        				
+					}, 500);
+				});
+        		
+        	} 
+        	
+            $('#btn').on('click',async function(){    
+            	for(let i=0;i<6;i++){
+            		await setImage(i);
+            		console.log('debug',i);
+            	}
+            	for(let i=0;i<5;i++){
+            		for(let j=i+1;j<6;j++){
+            			if(imgs[i]>imgs[j]){
+            				let temp = imgs[i];
+            				await setImage(j+6);
+            				//await setImage(i+6);
+            				imgs[i] = imgs[j]
+            				await setImage(i);
+            				imgs[j] = temp;
+            				await setImage(j);
+            			}
+            		}
+            	} 
+            });
+            
+        });
+     
+    </SCRipt>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><img src="./images/0.png" alt="0" id="0" width="250px" height="250px"></td>
+            <td><img src="./images/0.png" alt="0" id="1" width="250px" height="250px"></td>
+            <td><img src="./images/0.png" alt="0" id="2" width="250px" height="250px"></td>
+            <td><img src="./images/0.png" alt="0" id="3" width="250px" height="250px"></td>
+            <td><img src="./images/0.png" alt="0" id="4" width="250px" height="250px"></td>
+            <td><img src="./images/0.png" alt="0" id="5" width="250px" height="250px"></td>
+        </tr>
+    </table>
+    <button id='btn'>정렬</button>
+</body>
+</html>
