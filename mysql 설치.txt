@@ -1,0 +1,15 @@
+mysql 설치
+cd
+sudo apt install mysql-server
+sudo mysql -u root -p
+(리눅스 계정의 패스워드입력)
+mysql>>>
+alter user 'root'@'localhost' identified with mysql_native_password by '1q2w3e4r';
+exit
+mysql -u root -p
+(위에서 지정한 mysql패스워드)
+mysql>>>
+create database sku;
+use sku;
+create table member(userId varchar(20) not null, userPwd varchar(20) not null, userName varchar(20) not null, registDate datetime);
+show tables;
