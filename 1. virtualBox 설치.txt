@@ -1,0 +1,20 @@
+1. virtualBox 설치
+2. 우분투22.04 설치
+3. jdk 설치
+   - sudo apt update
+   - sudo apt install openjdk-17-jdk
+4. intellij 다운로드
+5. /home/본인의아이디/아래에 dev 폴더만들기
+   cd
+   mkdir dev
+6. intellij 파일 dev 아래로 이동하기
+   cd
+   mv  ./Downloads/intellij 파일 ./dev
+7. intellij 파일 압축풀기
+   tar -xvf intellij파일명
+8. intellij 폴더명 이동
+   cd intellij폴더명
+9. intellij 실행
+   cd bin
+   ./idea.sh
+      
